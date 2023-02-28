@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 repositories {
@@ -21,8 +21,8 @@ dependencies {
     // in place of the project ones.
 //    implementation 'com.acuant:acuantfacecapture:11.6.0'
 //    implementation 'com.acuant:acuantcamera:11.6.0'
-    implementation project(path: ':acuantcamera')
-    implementation project(path: ':acuantfacecapture')
+    implementation project(path: ':AndroidSDKV11_testing:acuantfacecapture')
+    implementation project(path: ':AndroidSDKV11_testing:acuantcamera')
     implementation 'com.acuant:acuantcommon:11.6.0'
     implementation 'com.acuant:acuantimagepreparation:11.6.0'
     implementation 'com.acuant:acuantdocumentprocessing:11.6.0'
@@ -36,11 +36,9 @@ android {
     buildToolsVersion '33'
 
     defaultConfig {
-        applicationId "com.acuant.sampleapp"
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 1
-        versionName
         multiDexEnabled true
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
@@ -57,14 +55,14 @@ android {
         }
     }
 
-    splits {
+    /*splits {
         abi {
             enable true
             reset()
             include "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
             universalApk true
         }
-    }
+    }*/
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

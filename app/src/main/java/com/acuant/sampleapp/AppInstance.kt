@@ -7,7 +7,7 @@ import android.app.Application
  * Created by tapasbehera on 4/18/18.
  */
 @Suppress("unused")
-class AppInstance : Application() {
+open class AppInstance : Application() {
     private var mDefaultUncaughtExceptionHandler: Thread.UncaughtExceptionHandler? = null
 //    private var refWatcher:RefWatcher? = null
     private val mCaughtExceptionHandler = Thread.UncaughtExceptionHandler { thread, ex ->

@@ -623,6 +623,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                         setProgress(false)
                         recentImage = image
                         showConfirmation(!frontCaptured)
+                        val intent = Intent()
+                        intent.putExtra("RETURN_TEXT", "perfect")
+                        this@MainActivity.setResult(RESULT_OK, intent)
+                        this@MainActivity.finish()
                     }
 
                     override fun onError(error: AcuantError) {
